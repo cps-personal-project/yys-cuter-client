@@ -1,0 +1,55 @@
+/*
+ * @Author: CPS
+ * @email: 373704015@qq.com
+ * @Date: 2022-02-21 18:59:15.180214
+ * @Last Modified by: CPS
+ * @Last Modified time: 2022-02-21 18:59:15.180214
+ * @Projectname
+ * @file_path "D:\CPS\MyProject\YYS\YYS-Electron-vue3\packages\renderer\src\test"
+ * @Filename "centers.stylus"
+ * @Description: 常用的一些居中方法
+ */
+/* ==========  水平居中  ============== */
+/* 1、【margin】 */
+horizontal-margin-children()
+  margin 0 auto
+
+/* 2、子元素用了【float】的居中方式 */
+horizontal-float-parent()
+  width fit-content
+  margin 0 auto
+
+horizontal-float-children()
+  float left
+
+/* 3、【绝对位置】配合【translateX】 */
+horizontal-transform-translate-children()
+  position absolute
+  left 50%
+  transform translateX(-50%)
+
+/* 4、 【绝对定位】配合【margin】-1 */
+:root
+  --parent-width 100px
+
+horizontal-transform-margin-parent()
+  width var(--parent-width)
+
+horizontal-transform-margin-children()
+  position absolute
+  left 50%
+  margin-left -0.5 * var(--parent-width)
+
+/* 5、 【绝对定位】配合【margin】-2 */
+horizontal-transform-margin-children()
+  position absolute
+  left 0
+  right 0
+  margin 0 auto
+
+/* 6、flex 水平居中 */
+horizontal-flex-parent()
+  display flex
+  justify-content center
+
+/* ==========  垂直居中  ============== */

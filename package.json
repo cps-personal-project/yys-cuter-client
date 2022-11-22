@@ -1,0 +1,49 @@
+{
+  "name": "electron-yys",
+  "version": "1.0.0",
+  "main": "dist/main/index.cjs",
+  "author": "capsion <373704015@qq.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "node scripts/watch.mjs",
+    "prebuild": "vue-tsc --project packages/renderer/tsconfig.json --noEmit && node scripts/build.mjs",
+    "build": "npm run prebuild && electron-builder",
+    "debug": "npm run prebuild && vite ./packages/renderer"
+  },
+  "engines": {
+    "node": ">=14.17.0"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.21",
+    "@vitejs/plugin-vue": "^2.1.0",
+    "autoprefixer": "^10.4.2",
+    "electron": "16.0.8",
+    "electron-builder": "^22.14.5",
+    "postcss": "^8.4.8",
+    "stylus": "^0.56.0",
+    "tailwindcss": "^3.0.23",
+    "typescript": "^4.5.5",
+    "unplugin-auto-import": "^0.5.11",
+    "unplugin-vue-components": "^0.17.18",
+    "vant": "^3.4.4",
+    "vite": "^2.7.13",
+    "vite-plugin-resolve": "^1.4.3",
+    "vue": "^3.2.29",
+    "vue-tsc": "^0.31.1"
+  },
+  "env": {
+    "//": "Used in build scripts",
+    "PORT": 3344
+  },
+  "keywords": [
+    "vite",
+    "electron",
+    "vue3",
+    "yys"
+  ],
+  "dependencies": {
+    "electron-log": "^4.4.6",
+    "element-plus": "^2.0.1",
+    "vue-router": "4"
+  }
+}
